@@ -6,7 +6,7 @@ import { Suspense } from "react";
 
 export default async function Home() {
   const queryClient = getQueryClient();
-  void queryClient.prefetchQuery(trpc.getUsers.queryOptions());
+  await queryClient.prefetchQuery(trpc.getUsers.queryOptions());
   return (
     <>
       <Button variant={"outline"}>Click Me</Button>
