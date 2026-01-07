@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <Button variant={"outline"}>Click Me</Button>
- );
+    <>
+      <Button variant={"outline"}>Click Me</Button>
+      <div>fake</div>
+    </>
+  );
 }
