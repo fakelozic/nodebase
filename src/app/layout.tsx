@@ -4,6 +4,9 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ModeToggle } from "@/components/mode-toggle";
 import { TRPCReactProvider } from "@/trpc/client";
+import { Toaster } from "@/components/ui/sonner";
+import Link from "next/link";
+import { Separator } from "@/components/ui/separator";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +40,15 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ModeToggle />
-          <TRPCReactProvider>{children}</TRPCReactProvider>
+          <div className="m-10 flex h-5 items-center space-x-4 text-sm">
+            <Link href={"/"}>Home</Link>
+            <Separator orientation="vertical" />
+            <Link href={"/login"}>Login</Link>
+          </div>
+          <TRPCReactProvider>
+            {children}
+            <Toaster />
+          </TRPCReactProvider>
         </ThemeProvider>
       </body>
     </html>
