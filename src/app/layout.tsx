@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-neutral-100 dark:bg-background`}
       >
         <ThemeProvider
           attribute="class"
@@ -40,11 +40,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <ModeToggle />
-          <div className="m-10 flex h-5 items-center space-x-4 text-sm">
-            <Link href={"/"}>Home</Link>
-            <Separator orientation="vertical" />
-            <Link href={"/login"}>Login</Link>
-          </div>
           <TRPCReactProvider>
             {children}
             <Toaster />

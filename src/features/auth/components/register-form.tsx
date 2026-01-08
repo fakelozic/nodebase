@@ -71,7 +71,7 @@ export function RegisterForm() {
   const isPending = form.formState.isSubmitting;
 
   return (
-    <Card className="w-full h-full md:w-110 border-none shadow-none mx-auto mt-20">
+    <Card className="w-full h-full md:w-110 border-none shadow-none">
       <CardHeader className="pl-10">
         <CardTitle className="text-2xl">Register</CardTitle>
         <CardDescription>
@@ -182,8 +182,8 @@ export function RegisterForm() {
         <Separator />
       </div>
       <CardContent className="px-10 flex flex-col gap-y-4">
-        <Field orientation="horizontal">
-          <Button disabled={isPending} size={"lg"}>
+        <Field orientation="vertical">
+          <Button disabled={isPending} size={"lg"} variant={"outline"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
@@ -209,7 +209,7 @@ export function RegisterForm() {
             </svg>
             Sign in with Google
           </Button>
-          <Button disabled={isPending} size={"lg"}>
+          <Button disabled={isPending} size={"lg"} variant={"outline"}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="1em"
